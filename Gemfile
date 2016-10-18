@@ -25,7 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #clearance gem used for lightweight user authentication
 gem "clearance"
-
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
