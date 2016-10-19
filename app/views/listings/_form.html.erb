@@ -1,0 +1,17 @@
+<%= form_for @listing do |f| %>
+	<%= f.file_field :avatars, multiple: true %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	<%= f.label :address %>
+	<%= f.text_field :address %>
+	<%= f.label :available_from %>
+	<%= f.date_select :available_from %>
+	<%= f.label :available_until %>
+	<%= f.date_select :available_until %>
+	<%= f.label :price_per_day %>
+	<%= f.text_field :price_day %>
+	<%= f.submit "Create a listing" %>
+
+<% end %>

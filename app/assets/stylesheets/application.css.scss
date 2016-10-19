@@ -1,2 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.jumbotron {
+	background-image: url("hero.jpeg");
+	background-size: cover;
+	height: 100vh;
+}
+

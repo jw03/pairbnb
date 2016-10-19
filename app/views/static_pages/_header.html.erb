@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand">Airbnb</a>
+		</div>
+			<ul class="nav navbar-nav navbar-right">
+		  	<% if signed_in? %>
+			    <li><a href="/users/<%= current_user.id %>">Your profile</a></li>
+			    <li>
+			    	<%= button_to 'Sign out', sign_out_path, method: :delete %>
+			    </li>
+		  	<% else %>
+			    <li>
+			    	<%= link_to 'Sign in', sign_in_path %>
+			    </li>
+		  	<% end %>
+		  </ul>
+	</div>
+</nav> 

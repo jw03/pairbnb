@@ -1,0 +1,10 @@
+<% @listings.each do |x| %>
+
+  Name: <a href="/listings/<%= x.id %>"><%= x.title %></a><br>
+  Description: <%= x.description %><br>
+  <% if x.user ==current_user %>
+	  <%= link_to "Edit this listing", edit_listing_path(x) %><br>
+	  <%= link_to "Delete this listing", listing_path(x), method: :delete %> <br>
+	<% end %>
+	
+<% end %>
