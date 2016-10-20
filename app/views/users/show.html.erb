@@ -1,4 +1,15 @@
 <p>show a user profile</p>
 
 <p><%= @user.email %></p>
+<%= form_for @user do |f| %>
+	<%= f.file_field :avatars, multiple: true %>
+	<%= f.submit "Add image" %>
+<% end %>
 
+<% if @user.avatars[0] %>
+
+	<%= image_tag @user.avatars[0].square.url %>
+<% end %>
+
+
+<%= link_to "Delete this image", remove_image_path(@user), method: :delete %>

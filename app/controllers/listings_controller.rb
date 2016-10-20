@@ -42,9 +42,9 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @listing.update(listing_params)
     if @listing.save
-      redirect_to @listing
+      redirect_to @listing # rails knows when u do redirect_to an object, means it will go to the show page of the object (show path means get '/listings/:id')
     else
-      render :edit
+      render :edit #erb: "listings/edit.html.erb"
     end
   end
 
