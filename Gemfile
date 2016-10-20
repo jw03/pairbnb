@@ -31,7 +31,8 @@ gem 'omniauth-facebook'
 gem 'figaro'
 
 #for image upload
-gem 'fog'
+gem 'fog', require: 'fog/aws'
+gem 'fog-aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
