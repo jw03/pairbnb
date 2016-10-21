@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :listings
+  resources :listings do
+    resources :reservations
+  end
 
   root "static_pages#home"
 
