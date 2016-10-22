@@ -3,5 +3,10 @@
 
 <p>Title: <%= @listing.title %></p>
 <p>Description: <%= @listing.description %></p>
+<p>Available from: <%= @listing.available_from %></p>
+<p>Available until: <%= @listing.available_until %></p>
+<p>Price per night: <%= @listing.price_day %></p>
 
-<%= image_tag @listing.avatars[0].square.url%>
+<% if @listing.avatars[0] %>
+	<%= image_tag @listing.avatars[0].square.url%>
+<% end %>

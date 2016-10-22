@@ -7,11 +7,10 @@
 	<%= f.label :address %>
 	<%= f.text_field :address %>
 	<%= f.label :available_from %>
-	<%= f.date_select :available_from %>
+	<%= f.date_field :available_from %>
 	<%= f.label :available_until %>
-	<%= f.date_select :available_until %>
+	<%= f.date_field :available_until %>
 	<%= f.label :price_per_day %>
 	<%= f.text_field :price_day %>
 	<%= f.submit "Create a listing" %>
-
 <% end %>
