@@ -5,6 +5,15 @@ class ListingsController < ApplicationController
 
   def create #post '/listings' do
     @listing = current_user.listings.new(listing_params)
+    start_date = @listing.available_from
+    end_date = @listing.available_until
+    num = end_date - start_date
+    num = num.to_i
+    num.times do
+      @listing.available_dates << AvailableDate.create(date: start_date) 
+      byebug
+      start_date += 1
+    end
     if @listing.save #happy path
       redirect_to @listing
       # redirect_to listing_path(@listing)
@@ -41,6 +50,15 @@ class ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     @listing.update(listing_params)
+    start_date = @listing.available_from
+    end_date = @listing.available_until
+    num = end_date - start_date
+    num = num.to_i
+    num.times do
+      @listing.available_dates << AvailableDate.create(date: start_date) 
+      byebug
+      start_date += 1
+    end
     if @listing.save
       redirect_to @listing # rails knows when u do redirect_to an object, means it will go to the show page of the object (show path means get '/listings/:id')
     else
