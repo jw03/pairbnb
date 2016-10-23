@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="navbar-header">
 			<a href="/" class="navbar-brand">Airbnb</a>
 		</div>
@@ -7,11 +7,14 @@
 		  	<% if signed_in? %>
 			    <li><a href="/users/<%= current_user.id %>">Your profile</a></li>
 			    <li>
-			    	<%= button_to 'Sign out', sign_out_path, method: :delete %>
+			    	<%= link_to 'Sign out', sign_out_path, method: :delete %>
 			    </li>
 		  	<% else %>
+					<li>
+		  			<%= link_to "Connect With Facebook", "/auth/facebook" %>
+		  		</li>
 			    <li>
-			    	<%= link_to 'Sign in', sign_in_path %>
+			    	<%= link_to 'Sign in', sign_in_path, data: {toggle: "modal", target: "#myModal"}%>
 			    </li>
 		  	<% end %>
 		  </ul>

@@ -1,9 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {
+	margin-bottom: 0;
+}
+
 .jumbotron {
 	background-image: url("hero.jpeg");
 	background-size: cover;
 	height: 100vh;
+	color: #FF5A5F;
+	margin-bottom: 0;
 }
+
 
