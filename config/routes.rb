@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
   delete "/users/:id/image" => "users#delete_image", as: "remove_image"
   
-
   resources :users, controller: "users", only: :show
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
