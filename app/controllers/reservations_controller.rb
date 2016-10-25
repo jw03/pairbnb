@@ -22,7 +22,11 @@ class ReservationsController < ApplicationController
       end
     else
       render :new
-    
+    end
+    @host = "james.wright037@gmail.com"
+    if @reservation.save
+      ReservationMailer.notification_email(current_user.email, @host, @reservation.listing.id, @reservation.id).deliver_later
+      # ReservationMailer to send a notification email after save
     end
   end
 
