@@ -10,8 +10,7 @@ class ListingsController < ApplicationController
     num = end_date - start_date
     num = num.to_i
     num.times do
-      @listing.available_dates << AvailableDate.create(date: start_date) 
-      byebug
+      @listing.available_dates << AvailableDate.create(date: start_date)
       start_date += 1
     end
     if @listing.save #happy path
@@ -56,7 +55,6 @@ class ListingsController < ApplicationController
     num = num.to_i
     num.times do
       @listing.available_dates << AvailableDate.create(date: start_date) 
-      byebug
       start_date += 1
     end
     if @listing.save

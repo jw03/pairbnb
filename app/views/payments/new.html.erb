@@ -3,22 +3,22 @@
 <%= form_for(@payment) do |f| %>
 
   <div class="field">
-    <h2><%= @reservation.listing.name %></h2>
+    <h2><%= @reservation.listing.title %></h2>
   </div>
 
   <div class="lead">
     <%= f.label :from %><br>
-    <%= @reservation.start_date %>
+    <%= @reservation.check_in %>
   </div>
 
   <div class="lead">
     <%= f.label :until %><br>
-    <%= @reservation.end_date %>
+    <%= @reservation.check_out %>
   </div>
 
   <div class="lead">
     <%= f.label :Total %><br>
-    <span class="label label-warning">RM <%= @reservation.total_sum %> </span>
+    <span class="label label-warning">RM <%= @reservation.listing.price_day * (@reservation.check_out - @reservation.check_in).to_i%> </span>
   </div>
 
   <div class="field">
@@ -26,7 +26,7 @@
   </div>
 
   <div class="field">
-    <%= f.hidden_field :total_price, value: @reservation.total_sum %>
+    <%= f.hidden_field :total_price, value: @reservation.listing.price_day %>
   </div>
 
   <div class="field">
