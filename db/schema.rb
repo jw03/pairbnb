@@ -32,12 +32,13 @@ ActiveRecord::Schema.define(version: 20161024035639) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "address"
-    t.date     "available_from"
-    t.date     "available_until"
-    t.integer  "price_day"
+    t.string   "title",           null: false
+    t.text     "description",     null: false
+    t.string   "address",         null: false
+    t.string   "city",            null: false
+    t.date     "available_from",  null: false
+    t.date     "available_until", null: false
+    t.integer  "price_day",       null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
@@ -68,6 +69,8 @@ ActiveRecord::Schema.define(version: 20161024035639) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "email",                          null: false
+    t.string   "first_name",                     null: false
+    t.string   "last_name",                      null: false
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
