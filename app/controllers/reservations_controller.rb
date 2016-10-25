@@ -25,9 +25,10 @@ class ReservationsController < ApplicationController
     end
     @host = "james.wright037@gmail.com"
     if @reservation.save
-      ReservationMailer.notification_email(current_user.email, @host, @reservation.listing.id, @reservation.id).deliver_later
-      # ReservationMailer to send a notification email after save
-    end
+    # ReservationMailer.notification_email(current_user.email, @host, @reservation.listing.id, @reservation.id).deliver_later
+      ReservationJob.perform_later(current_user.email, @host, @reservation.listing.id, @reservation.id)
+    # call out reservation job to perform the mail sending task after @reservation is successfully saved
+  end
   end
 
   def show
