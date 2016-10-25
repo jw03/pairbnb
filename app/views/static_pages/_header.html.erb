@@ -14,9 +14,32 @@
 		  			<%= link_to "Connect With Facebook", "/auth/facebook" %>
 		  		</li>
 			    <li>
-			    	<%= link_to 'Sign in', sign_in_path, data: {toggle: "modal", target: "#myModal"}%>
+						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign In</button>
 			    </li>
 		  	<% end %>
 		  </ul>
 	</div>
 </nav> 
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign In Form</h4>
+      </div>
+      <div class="modal-body">
+        <div id="clearance" class="sign-in">
+  				<h2><%= t(".title") %></h2>
+
+ 					 <%= render partial: '/sessions/form' %>
+
+					</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
