@@ -23,5 +23,8 @@ Rails.application.routes.draw do
   resources :users, controller: "users", only: :show
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
+  get "/payments/new" => 'payments#new', as: 'new_payment'
+  post "/payments/show" => 'payments#show', as: 'payments'
+
   resources :users
 end
