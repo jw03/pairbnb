@@ -4,6 +4,11 @@
 			<div class="col-md-6 col-md-offset-3 text-center">
 				<h1>Airbnb</h1>
 				<p>Book unique homes and experience a city like a local.</p>
+
+				<%= form_for Listing.new, method: :get, url: search_path, class: "navbar-form navbar-left" do |f| %>
+			    <%= text_field_tag :term, params[:term], placeholder:"Where do you wanna go?" %>
+			    <%= f.submit 'search', class: 'btn btn-primary' %>
+			  <% end %>
 			</div>
 		</div>
 	</div>
