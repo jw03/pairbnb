@@ -1,22 +1,21 @@
 <%= form_for :session, url: session_path do |form| %>
+  <%= link_to "Connect With Facebook", "/auth/facebook", :class => "like-btn like-btn-fb" %>
+  
+  <div class="signin-separator">
+    <span class="signin-separator--text">or</span>
+    <hr>
+  </div>
+
   <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+    <%= form.text_field :email, type: 'email', placeholder: "Email", :class =>"modal-input" %>
   </div>
 
   <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, placeholder: "Password", :class => "modal-input" %>
   </div>
+  <%= link_to t(".forgot_password"), new_password_path %>
+  <%= form.submit :class => "modal-input modal-input-primary" %>
+  
+  
 
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
-
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
 <% end %>
