@@ -16,12 +16,6 @@
   <%= link_to t(".forgot_password"), new_password_path %>
   <%= form.submit :class => "modal-input modal-input-primary" %>
   
-  <hr>
   
-  <div class="signin-footer">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <span>Don't have an account?</span>
-      <%= link_to t(".sign_up"), sign_up_path, :class => "" %>
-    <% end %>
-  </div>
+
 <% end %>
