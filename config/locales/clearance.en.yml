@@ -49,7 +49,7 @@ en:
       title: Reset your password
   sessions:
     form:
-      forgot_password: Forgot password?
+      forgot_password: Reset password
       sign_up: Sign up
     new:
       title: Sign in
